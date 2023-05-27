@@ -1,0 +1,82 @@
+import { AppBar, Toolbar,Typography,Button, Stack,Drawer,Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux/es/exports";
+import { WindowSizeAct } from "../Redux/Action/Navigation/WindowSizeAct";
+import IconButton from "@mui/material/IconButton";
+import { Menu } from "@mui/icons-material";
+import {useNavigate} from 'react-router-dom'
+import $ from 'jquery'
+
+export default function Nav() {
+    let [isOpen,setIsOpen] = useState<boolean>(false)
+    const navigate = useNavigate()
+    // Redux
+    const dispatch = useDispatch()
+    const items = useSelector((state:any)=>state.itemsSave)
+    const windowWidth = useSelector((state:any)=>state.windowWidth)
+    useEffect(()=>{
+        window.addEventListener('resize',()=>{
+            let size = window.innerWidth
+            dispatch(WindowSizeAct(size))
+        })
+        window.addEventListener('scroll',()=>{
+                if(window.scrollY>0){
+                    $('.nav').css({backdropFilter:'blur(5px'})
+                }
+        })
+    })
+  return (
+    <AppBar 
+    className='nav'
+    sx={{
+position:'fixed',
+top:'0%',
+left:'0%',
+bgcolor:'transparent',
+boxShadow:'none',
+padding:'0px',
+margin:'0px',
+    }}
+    >
+        <Toolbar>
+{/* Header */}
+<Typography sx={{flexGrow:1,paddingLeft:{md:'5%',lg:'15%'}}}>
+    <Button onClick={()=>navigate('/')} variant='text' disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'x-large',sm:'xx-large',fontWeight:'bold','&:hover':{backgroundColor:'transparent'}}}}>PizzaLand</Button>
+</Typography>
+{/* Navigation Links */}
+<Stack direction='row' pr={{md:'5%',lg:'15%'}} spacing={2} display={windowWidth>900?'block':'none'}>
+<Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Menu</Button>
+<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Contact</Button>
+<Button startIcon={''} onClick={()=>navigate('/cart')} disableElevation disableTouchRipple variant="contained" sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px 10px'}}>Cart:{items.length}</Button>
+</Stack>
+{windowWidth <= 900 && 
+<>  
+<IconButton onClick={()=>setIsOpen(e=>!e)} disableTouchRipple disableRipple sx={{'&:focus':{outline:'none'}}}>
+    <Menu fontSize="large" sx={{color:'orange'}}/>
+</IconButton>
+<Drawer
+open={isOpen}
+anchor="right"
+onClose={()=>setIsOpen(e=>!e)}
+>
+<Box
+width='200px'
+>
+    <center><Typography variant="h4" sx={{color:'orange'}} mt={1}>Category</Typography></center>
+    <br />
+{/* Navigation Links */}
+<Stack direction='column' mt={2} spacing={2}>
+<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Menu</Button>
+<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Contact</Button>
+<br />
+<br />
+<Button startIcon={''} disableElevation disableTouchRipple variant="contained" sx={{color:'orange',fontSize:'large'}}>Cart:{items.length}</Button>
+</Stack>
+</Box>
+</Drawer>
+</>}
+        </Toolbar>
+    </AppBar>
+  )
+}

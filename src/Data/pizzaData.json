@@ -1,0 +1,130 @@
+[
+    {
+      "id": 1,
+      "name": "Atum",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/atum.png?raw=true",
+      "price": [14.49, 19.99, 29.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, atum, cebola fatiada e orégano."
+    },
+    {
+      "id": 2,
+      "name": "Calabresa",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/calabresa.png?raw=true",
+      "price": [14.5, 19.99, 27.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, calabresa fatiada, cebola fatiada e orégano."
+    },
+    {
+      "id": 3,
+      "name": "Camarão c/ catupiry",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/camarao-c-catupiry.png?raw=true",
+      "price": [16.5, 25.99, 32.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, camarões ao molho, catupiry e orégano."
+    },
+    {
+      "id": 4,
+      "name": "4 Queijos",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/4queijos.png?raw=true",
+      "price": [15.5, 19.99, 47.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, provolone, parmesão, catupiry e orégano."
+    },
+    {
+      "id": 5,
+      "name": "Frango c/ catupiry",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/frango-catupiry.png?raw=true",
+      "price": [14.5, 19.99, 26.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, frango desfiado, catupiry e orégano."
+    },
+    {
+      "id": 6,
+      "name": "Milho c/ bacon",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/milho-com-bacon.png?raw=true",
+      "price": [14.5, 23.99, 42.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
+    },
+    {
+      "id": 7,
+      "name": "Moda da casa",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/moda-da-casa.png?raw=true",
+      "price": [14.5, 23.99, 38.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
+    },
+    {
+      "id": 8,
+      "name": "Muçarela",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/mu%C3%A7arela.png?raw=true",
+      "price": [14.5, 23.99, 32.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
+    },
+    {
+      "id": 9,
+      "name": "Napolitana",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/napolitana.png?raw=true",
+      "price": [14.5, 26.99, 33.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, tomates em rodelas, parmesão, azeitonas e orégano."
+    },
+    {
+      "id": 10,
+      "name": "Pepperoni",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/pepperoni.png?raw=true",
+      "price": [14.5, 21.99, 28.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, salame pepperoni fatiado e orégano."
+    },
+    {
+      "id": 11,
+      "name": "Portuguesa",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/portuguesa.png?raw=true",
+      "price": [15.5, 26.99, 35.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, presunto, calabresa, ovos, cebola, azeitonas e orégano."
+    },
+    {
+      "id": 12,
+      "name": "Brócolis c/ catupiry",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/brocolis-com-catupiry.png?raw=true",
+      "price": [14.5, 22.99, 24.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Molho, muçarela, brócolis refogado com azeite de oliva e alho, catupiry e orégano."
+    },
+    {
+      "id": 13,
+      "name": "Chocolate",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/calabresa.png?raw=true",
+      "price": [14.5, 24.99, 29.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Chocolate ao leite."
+    },
+    {
+      "id": 14,
+      "name": "M&M's",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/chocolate-c-mm.png?raw=true",
+      "price": [14.5, 22.99, 32.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Chocolate e M&M's."
+    },
+    {
+      "id": 15,
+      "name": "Chocolate c/ morango",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/chocolate-com-morango.png?raw=true",
+      "price": [15.5, 23.99, 34.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Chocolate ao leite e morango"
+    },
+    {
+      "id": 16,
+      "name": "Banana c/ doce de Leite",
+      "img": "https://github.com/matealves/pizzaria/blob/main/images/banan-doce-de-leite.png?raw=true",
+      "price": [16.5, 24.99, 29.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Banana, doce de leite, açúcar e canela."
+    }
+  ]
