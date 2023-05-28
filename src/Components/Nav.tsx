@@ -1,4 +1,4 @@
-import { AppBar, Toolbar,Typography,Button, Stack,Drawer,Box } from "@mui/material";
+import { AppBar, Toolbar,Typography,Button, Stack,Drawer,Box, Badge } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux/es/exports";
@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import { Menu } from "@mui/icons-material";
 import {useNavigate} from 'react-router-dom'
 import $ from 'jquery'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Nav() {
     let [isOpen,setIsOpen] = useState<boolean>(false)
@@ -48,7 +49,19 @@ margin:'0px',
 <Stack direction='row' pr={{md:'5%',lg:'15%'}} spacing={2} display={windowWidth>900?'block':'none'}>
 <Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Menu</Button>
 <Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Contact</Button>
-<Button startIcon={''} onClick={()=>navigate('/cart')} disableElevation disableTouchRipple variant="contained" sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px 10px'}}>Cart:{items.length}</Button>
+<Badge 
+badgeContent={4} 
+onClick={()=>navigate('/cart')}  
+color='primary' 
+sx={{
+    bgcolor:'#007bff',
+    borderRadius:'2.4mm',
+    padding:'5px 20px',
+    cursor:'pointer',
+    transition:'0.2s',
+    '&:hover':{scale:'1.2'}}}>
+    <ShoppingCartIcon sx={{color:'orange',fontSize:'x-large'}} />
+</Badge>
 </Stack>
 {windowWidth <= 900 && 
 <>  
@@ -71,7 +84,16 @@ width='200px'
 <Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Contact</Button>
 <br />
 <br />
-<Button startIcon={''} disableElevation disableTouchRipple variant="contained" sx={{color:'orange',fontSize:'large'}}>Cart:{items.length}</Button>
+<Button 
+startIcon={<ShoppingCartIcon />}
+onClick={()=>navigate('/cart')} 
+disableElevation 
+disableTouchRipple 
+variant="contained" 
+sx={{color:'orange',fontSize:'large'}}
+>
+    Cart:{items.length}
+</Button>
 </Stack>
 </Box>
 </Drawer>

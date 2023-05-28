@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { IconSize } from "../Styles/mui/Mui";
 import '../Styles/Home/home.css'
 import {useState,useEffect}from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ItemPriceActAdd } from "../Redux/Action/ItemConfirmPriceAct/ItemPriceAct";
 
 export default function Items() {
@@ -14,11 +14,12 @@ export default function Items() {
     let dispatch = useDispatch()
 
     // usState
+    let[checkBox,setcheckBox] = useState<boolean>(false)
     const [mainPrice,setMainPrice] = useState<number>(0)
     const [smallSize,setSmallSize] = useState<number>(0)
     const [mediumSize,setMediumSize] = useState<number>(0)
     const [largeSize,setLargeSize] = useState<number>(0)
-    let [arr,setArr] = useState<any[]>([])
+    let [obj,setObj] = useState<{}>({})
 
     // Get Id From food/:Id
     let {Id} = useParams()
@@ -29,22 +30,27 @@ export default function Items() {
 let addPrice = (price:number) => {
     setMainPrice(mainPrice + price)
     setSmallSize(smallSize + 1)
-    setArr([Id,parseInt(mainPrice.toFixed(2)),smallSize,mediumSize,largeSize])
+    setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
 //    remove item
 let removePrice = (price:number) =>{
     setMainPrice(mainPrice - price)
     setSmallSize(smallSize - 1)
-    setArr([Id,parseInt(mainPrice.toFixed(2)),smallSize,mediumSize,largeSize])
+    setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
-// Look After Price
+// Look After Price And Button 
 useEffect(()=>{
-    setArr([Id,parseInt(mainPrice.toFixed(2)),smallSize,mediumSize,largeSize])
+            setObj({main,mainPrice,smallSize,mediumSize,largeSize})
+            if(mainPrice===0){
+                setcheckBox(true)
+            }else{
+                setcheckBox(false)
+            }
 },[mainPrice])
 
 // add item in store(Redux)
-let add = () => {
-    dispatch(ItemPriceActAdd(arr))
+let add = () => {   
+        dispatch(ItemPriceActAdd(obj))
 }
   return (
     <>
@@ -137,11 +143,13 @@ let add = () => {
     <br />
     <br />
     <Button 
-    onClick={()=>add()} 
+    onClick={()=>add()}
     variant='contained'
     sx={{padding:'10px 50px'}}
+    disabled={checkBox}
     >
     Confirm</Button>
+    <Typography variant='h6' color='error'>{checkBox?'This Item is already in Cart':''}</Typography>
     </Box>
     </center>
     </>

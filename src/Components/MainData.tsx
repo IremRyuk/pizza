@@ -1,20 +1,12 @@
 import { Grid,Typography,Box } from '@mui/material'
-import {useDispatch,useSelector} from 'react-redux'
-import { SavedItemsAct } from '../Redux/Action/Data/SavedItemsAct'
+import {useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 export default function MainData() {
     // React Router Dom
     let navigate = useNavigate()
     // Redux
-    let dispatch = useDispatch()
     let data = useSelector((state:any)=>state.mainData)
-    let itemsSave = useSelector((state:any)=>state.itemsSave)
-    // Item Function 
-//     let itemFunction =  (data:string|number|{}) =>{
-// dispatch(SavedItemsAct(data))
-//     }
-    console.log(itemsSave)
   return (
     <center><Grid 
     mt={5}

@@ -10,7 +10,6 @@ export default function Filter() {
   // Redux
   let dispatch = useDispatch()
   let range = useSelector((state:any)=>state.price)
-  console.log(range)
   // Pricee Filter
   let priceFilter = () => {
     $('.priceFilter').toggle(200)
