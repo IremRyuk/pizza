@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { IconSize } from "../Styles/mui/Mui";
 import '../Styles/Home/home.css'
 import {useState,useEffect}from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ItemPriceActAdd } from "../Redux/Action/ItemConfirmPriceAct/ItemPriceAct";
 
 export default function Items() {
