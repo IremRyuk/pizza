@@ -3,6 +3,8 @@ import {useDispatch,useSelector} from 'react-redux'
 import { FilterAct } from '../Redux/Action/FilterAct/FilterAct'
 import $ from 'jquery'
 import {useEffect} from 'react'
+import DataMain from '../Data/pizzaData.json'
+import { MainDataAct } from '../Redux/Action/Data/DataAct'
 export default function Filter() {
   useEffect(()=>{
     $('.priceFilter').hide()
@@ -13,6 +15,12 @@ export default function Filter() {
   // Pricee Filter
   let priceFilter = () => {
     $('.priceFilter').toggle(200)
+  }
+  let DataFiltered = DataMain.filter((money:any)=>{return money.price[0]>=range[0] || money.price[2]<=range[1]})
+  console.log(range)
+  console.log(DataFiltered)
+  let filterData = () => {
+    dispatch(MainDataAct(DataFiltered))
   }
   return (
     <>
@@ -30,6 +38,9 @@ export default function Filter() {
   onChange={(_e:Event,newValue:number|number[])=>{dispatch(FilterAct(newValue))}}
   valueLabelDisplay='auto'
   />
+  <Button variant='contained' size='large' onClick={()=>filterData()}>Filter</Button>
+  <br />
+  <br />
   <Typography variant='h6'>Searching From <span style={{color:'lime',fontWeight:'bold'}}>{range[0]}$</span> To <span style={{color:'lime',fontWeight:'bold'}}>{range[1]}$</span></Typography>
 </Box></center>
 </>

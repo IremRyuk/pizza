@@ -16,6 +16,7 @@ export default function Nav() {
     const dispatch = useDispatch()
     const items = useSelector((state:any)=>state.itemsSave)
     const windowWidth = useSelector((state:any)=>state.windowWidth)
+    let allItems = useSelector((state:any)=>state.allItemsPrice)
     useEffect(()=>{
         window.addEventListener('resize',()=>{
             let size = window.innerWidth
@@ -50,7 +51,7 @@ margin:'0px',
 <Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Menu</Button>
 <Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Contact</Button>
 <Badge 
-badgeContent={4} 
+badgeContent={allItems.length} 
 onClick={()=>navigate('/cart')}  
 color='primary' 
 sx={{

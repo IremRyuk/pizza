@@ -29,13 +29,11 @@ export default function Items() {
     // add item
 let addPrice = (price:number) => {
     setMainPrice(mainPrice + price)
-    setSmallSize(smallSize + 1)
     setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
 //    remove item
 let removePrice = (price:number) =>{
     setMainPrice(mainPrice - price)
-    setSmallSize(smallSize - 1)
     setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
 // Look After Price And Button 
@@ -100,7 +98,7 @@ let add = () => {
         <RemoveIcon sx={IconSize} className="redbtn" />
     </IconButton>
     <Typography sx={IconSize}>{main.price[0]} $</Typography>
-    <IconButton disableRipple sx={IconSize} onClick={()=>{addPrice(main.price[0])}}>
+    <IconButton disableRipple sx={IconSize} onClick={()=>{addPrice(main.price[0]),setSmallSize(smallSize + 1)}}>
         <AddIcon className="greenBtn" sx={IconSize}/>
     </IconButton>
     </Stack>
@@ -149,7 +147,7 @@ let add = () => {
     disabled={checkBox}
     >
     Confirm</Button>
-    <Typography variant='h6' color='error'>{checkBox?'This Item is already in Cart':''}</Typography>
+    <Typography variant='h6' color='error'>{checkBox?'Please Select Sizes':''}</Typography>
     </Box>
     </center>
     </>
