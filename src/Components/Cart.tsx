@@ -7,6 +7,21 @@ export default function Cart() {
     let allItems = useSelector((state:any)=>state.allItemsPrice)
   return (
     <>
+    {allItems.length === 0 &&
+    <Typography
+    variant='h4'
+    color='primary'
+    sx={{
+      position:'absolute',
+      top:'50%',
+      left:'50%',
+      transform:'translate(-50%,-50%)',
+      fontFamily:`'Roboto Slab', serif`
+    }}
+    className='emptyTitle'
+    >Cart is Empty, Please Choose Your Food</Typography>
+    }
+    {allItems.length > 0 && 
     <center><Box
     sx={{
       marginTop:'100px',
@@ -68,6 +83,7 @@ sx={{
 >
 </Stack>
     </Box></center>
+    }
     </>
   )
 }

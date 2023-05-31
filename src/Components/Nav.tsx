@@ -1,3 +1,4 @@
+import '../Styles/Nav/nav.css'
 import { AppBar, Toolbar,Typography,Button, Stack,Drawer,Box, Badge } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -8,13 +9,13 @@ import { Menu } from "@mui/icons-material";
 import {useNavigate} from 'react-router-dom'
 import $ from 'jquery'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { TitlePizza, TitlePizzaNavigations } from '../Styles/Nav/Navigation';
 
 export default function Nav() {
     let [isOpen,setIsOpen] = useState<boolean>(false)
     const navigate = useNavigate()
     // Redux
     const dispatch = useDispatch()
-    const items = useSelector((state:any)=>state.itemsSave)
     const windowWidth = useSelector((state:any)=>state.windowWidth)
     let allItems = useSelector((state:any)=>state.allItemsPrice)
     useEffect(()=>{
@@ -44,12 +45,18 @@ margin:'0px',
         <Toolbar>
 {/* Header */}
 <Typography sx={{flexGrow:1,paddingLeft:{md:'5%',lg:'15%'}}}>
-    <Button onClick={()=>navigate('/')} variant='text' disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'x-large',sm:'xx-large',fontWeight:'bold','&:hover':{backgroundColor:'transparent'}}}}>PizzaLand</Button>
+    <Button 
+    onClick={()=>navigate('/')} 
+    variant='text' 
+    disableElevation 
+    disableTouchRipple
+    sx={TitlePizza}
+    >PizzaLand</Button>
 </Typography>
 {/* Navigation Links */}
 <Stack direction='row' pr={{md:'5%',lg:'15%'}} spacing={2} display={windowWidth>900?'block':'none'}>
-<Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Menu</Button>
-<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:{xs:'large',sm:'large'},padding:'0px','&:hover':{backgroundColor:'transparent'}}}>Contact</Button>
+<Button variant="text" sx={TitlePizzaNavigations} onClick={()=>navigate('/')} disableElevation disableTouchRipple>Menu</Button>
+<Button variant="text" sx={TitlePizzaNavigations} onClick={()=>navigate('/contacts')} disableElevation disableTouchRipple>Contact</Button>
 <Badge 
 badgeContent={allItems.length} 
 onClick={()=>navigate('/cart')}  
@@ -81,8 +88,8 @@ width='200px'
     <br />
 {/* Navigation Links */}
 <Stack direction='column' mt={2} spacing={2}>
-<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Menu</Button>
-<Button variant="text" disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Contact</Button>
+<Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Menu</Button>
+<Button variant="text" onClick={()=>navigate('/contacts')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Contact</Button>
 <br />
 <br />
 <Button 
@@ -93,7 +100,7 @@ disableTouchRipple
 variant="contained" 
 sx={{color:'orange',fontSize:'large'}}
 >
-    Cart:{items.length}
+    Cart:{allItems.length}
 </Button>
 </Stack>
 </Box>

@@ -11,6 +11,7 @@
 
 .redbtn {
   transition: 0.2s;
+  color: red;
 }
 .redbtn:hover {
   color: red;
@@ -19,25 +20,28 @@
 
 .greenBtn {
   transition: 0.2s;
+  color: lime;
 }
 .greenBtn:hover {
-  color: green;
+  color: lime;
   scale: 1.3;
 }
 
 @media screen and (max-width: 600px) {
   .redbtn {
     transition: 0s;
+    color: red;
   }
   .redbtn:hover {
-    color: black;
+    color: red;
     scale: 1;
   }
   .greenBtn {
     transition: 0s;
+    color: lime;
   }
   .greenBtn:hover {
-    color: black;
+    color: lime;
     scale: 1;
   }
 }/*# sourceMappingURL=home.css.map */

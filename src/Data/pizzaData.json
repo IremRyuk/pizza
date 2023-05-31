@@ -11,7 +11,7 @@
       "id": 2,
       "name": "Calabresa",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/calabresa.png?raw=true",
-      "price": [14.5, 19.99, 27.99],
+      "price": [14.59, 19.99, 27.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, calabresa fatiada, cebola fatiada e orégano."
     },
@@ -19,7 +19,7 @@
       "id": 3,
       "name": "Camarão c/ catupiry",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/camarao-c-catupiry.png?raw=true",
-      "price": [16.5, 25.99, 32.99],
+      "price": [16.59, 25.99, 32.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, camarões ao molho, catupiry e orégano."
     },
@@ -27,7 +27,7 @@
       "id": 4,
       "name": "4 Queijos",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/4queijos.png?raw=true",
-      "price": [15.5, 19.99, 47.99],
+      "price": [15.59, 19.99, 47.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, provolone, parmesão, catupiry e orégano."
     },
@@ -35,7 +35,7 @@
       "id": 5,
       "name": "Frango c/ catupiry",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/frango-catupiry.png?raw=true",
-      "price": [14.5, 19.99, 26.99],
+      "price": [14.59, 19.99, 26.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, frango desfiado, catupiry e orégano."
     },
@@ -43,7 +43,7 @@
       "id": 6,
       "name": "Milho c/ bacon",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/milho-com-bacon.png?raw=true",
-      "price": [14.5, 23.99, 42.99],
+      "price": [14.59, 23.99, 42.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
     },
@@ -51,7 +51,7 @@
       "id": 7,
       "name": "Moda da casa",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/moda-da-casa.png?raw=true",
-      "price": [14.5, 23.99, 38.99],
+      "price": [14.59, 23.99, 38.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
     },
@@ -59,7 +59,7 @@
       "id": 8,
       "name": "Muçarela",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/mu%C3%A7arela.png?raw=true",
-      "price": [14.5, 23.99, 32.99],
+      "price": [14.69, 23.99, 32.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, milho, bacon, parmesão e orégano."
     },
@@ -67,7 +67,7 @@
       "id": 9,
       "name": "Napolitana",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/napolitana.png?raw=true",
-      "price": [14.5, 26.99, 33.99],
+      "price": [14.59, 26.99, 33.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, tomates em rodelas, parmesão, azeitonas e orégano."
     },
@@ -75,7 +75,7 @@
       "id": 10,
       "name": "Pepperoni",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/pepperoni.png?raw=true",
-      "price": [14.5, 21.99, 28.99],
+      "price": [14.59, 21.99, 28.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, salame pepperoni fatiado e orégano."
     },
@@ -83,7 +83,7 @@
       "id": 11,
       "name": "Portuguesa",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/portuguesa.png?raw=true",
-      "price": [15.5, 26.99, 35.99],
+      "price": [15.59, 26.99, 35.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, presunto, calabresa, ovos, cebola, azeitonas e orégano."
     },
@@ -91,7 +91,7 @@
       "id": 12,
       "name": "Brócolis c/ catupiry",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/brocolis-com-catupiry.png?raw=true",
-      "price": [14.5, 22.99, 24.99],
+      "price": [14.59, 22.99, 24.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Molho, muçarela, brócolis refogado com azeite de oliva e alho, catupiry e orégano."
     },
@@ -99,7 +99,7 @@
       "id": 13,
       "name": "Chocolate",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/calabresa.png?raw=true",
-      "price": [14.5, 24.99, 29.99],
+      "price": [14.59, 24.99, 29.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Chocolate ao leite."
     },
@@ -107,7 +107,7 @@
       "id": 14,
       "name": "M&M's",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/chocolate-c-mm.png?raw=true",
-      "price": [14.5, 22.99, 32.99],
+      "price": [14.59, 22.99, 32.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Chocolate e M&M's."
     },
@@ -115,7 +115,7 @@
       "id": 15,
       "name": "Chocolate c/ morango",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/chocolate-com-morango.png?raw=true",
-      "price": [15.5, 23.99, 34.99],
+      "price": [15.55, 23.99, 34.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Chocolate ao leite e morango"
     },
@@ -123,8 +123,48 @@
       "id": 16,
       "name": "Banana c/ doce de Leite",
       "img": "https://github.com/matealves/pizzaria/blob/main/images/banan-doce-de-leite.png?raw=true",
-      "price": [16.5, 24.99, 29.99],
+      "price": [16.49, 24.99, 29.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Banana, doce de leite, açúcar e canela."
+    },
+    {
+      "id": 17,
+      "name": "Club Sendwich",
+      "img": "https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=",
+      "price": [17.29, 25.99, 36.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Bread with cheese,meat,salad,tomato"
+    },
+    {
+      "id": 18,
+      "name": "Triple Sandwich",
+      "img": "https://media.istockphoto.com/id/157431311/photo/turkey-sandwich.jpg?s=612x612&w=0&k=20&c=uB6byErFAnWxFkkAqMiGNRJGE8r3nqsSDdqrfBE8HOA=",
+      "price": [19.39, 27.99, 39.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Bread with tomato,cheese,egg,salad"
+    },
+    {
+      "id": 19,
+      "name": "Breakfast Grilled Cheese",
+      "img": "https://img.freepik.com/free-photo/sandwich_1339-1108.jpg",
+      "price": [21.49, 31.99, 41.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Bread with cheese and egg"
+    },
+    {
+      "id": 20,
+      "name": "Ham Sandwich",
+      "img": "https://media.istockphoto.com/id/157428028/photo/ham-sandwich.jpg?s=170667a&w=0&k=20&c=oKhrGfwcwY9mCjHoCxdZGqJ7qkthmjSuKE3XgovplFg=",
+      "price": [17.89, 32.99, 42.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Bread with ham, cold nuts,cheese,tomato"
+    },
+    {
+      "id": 21,
+      "name": "Cheesy",
+      "img": "https://previews.123rf.com/images/mg7/mg71602/mg7160200018/53442330-sliced-chicken-club-sandwich.jpg",
+      "price": [16.99, 26.99, 37.99],
+      "sizes": ["320g", "530g", "860g"],
+      "description": "Bread with 3 types of cheese and tomato,ham"
     }
   ]

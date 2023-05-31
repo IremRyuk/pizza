@@ -1,22 +1,31 @@
 import { Grid,Typography,Box } from '@mui/material'
 import {useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { FoodFonts } from '../Styles/mui/Mui'
 
 export default function MainData() {
     // React Router Dom
     let navigate = useNavigate()
     // Redux
     let data = useSelector((state:any)=>state.mainData)
+    let search = useSelector((state:any)=>state.searchWord)
   return (
     <center><Grid 
-    mt={5}
+    mt={1}
     container 
     sx={{
         width:'90vw',
         justifyContent:'space-evenly',
-        justifySelf:'center'
+        justifySelf:'center',
+        alignItems:'center'
         }}>
-{data.map((info:any)=>(
+{data.filter((word:any)=>{
+  if(search === ''){
+    return data
+  }else if(word.name.toLowerCase().includes(search.toLowerCase())){
+    return search
+  }
+}).map((info:any)=>(
     <Grid 
     // onClick={()=>itemFunction(info)}
     item 
@@ -39,7 +48,7 @@ export default function MainData() {
             loading='lazy'
             sx={{width:'70%',objectFit:'contain'}}
             />
-<Typography variant='h4'>{info.name}</Typography>
+<Typography sx={FoodFonts}>{info.name}</Typography>
         </Grid>
 ))}
     </Grid></center>

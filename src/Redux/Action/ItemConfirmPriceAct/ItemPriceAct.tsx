@@ -4,3 +4,6 @@ export let ItemPriceActAdd = (addItem:{}) => {
 export let ItemPriceActClear = (item:any) => {
     return {type:'clearAll',item}
 }
+export let ItemPriceActRemoveAndAdd = (remove:number) => {
+    return {type:'removeAndAdd',remove}
+}

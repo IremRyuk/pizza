@@ -3,15 +3,16 @@ import {Box,Button,IconButton,Stack, Typography} from '@mui/material'
 import Data from '../Data/pizzaData.json'
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
-import { IconSize } from "../Styles/mui/Mui";
+import { IconSizeMini,IconSize, SmallSizeBtn, IconSizeMiniBtn } from "../Styles/mui/Mui";
 import '../Styles/Home/home.css'
 import {useState,useEffect}from 'react'
-import { useDispatch } from "react-redux";
-import { ItemPriceActAdd } from "../Redux/Action/ItemConfirmPriceAct/ItemPriceAct";
+import { useDispatch, useSelector } from "react-redux";
+import { ItemPriceActAdd, ItemPriceActRemoveAndAdd } from "../Redux/Action/ItemConfirmPriceAct/ItemPriceAct";
 
 export default function Items() {
     // Redux
     let dispatch = useDispatch()
+    let cartStore = useSelector((state:any)=>state.allItemsPrice)
 
     // usState
     let[checkBox,setcheckBox] = useState<boolean>(false)
@@ -39,16 +40,28 @@ let removePrice = (price:number) =>{
 // Look After Price And Button 
 useEffect(()=>{
             setObj({main,mainPrice,smallSize,mediumSize,largeSize})
-            if(mainPrice===0){
+            // Check Values
+            if(mainPrice<=0 || smallSize<0 || mediumSize<0 || largeSize<0 ){
                 setcheckBox(true)
-            }else{
+                return
+            }
+            else if(smallSize===0 && mediumSize===0 && largeSize===0 ){
+                setcheckBox(true)
+            }
+            else{
                 setcheckBox(false)
             }
 },[mainPrice])
 
 // add item in store(Redux)
-let add = () => {   
+let add = () => {
+    // Check if Redux Data includes 'main.id' so remove it and replace with new one
+    if(cartStore.some((res:any)=>res.main.id == main.id)){
+        dispatch(ItemPriceActRemoveAndAdd(main.id))
         dispatch(ItemPriceActAdd(obj))
+    }else{
+        dispatch(ItemPriceActAdd(obj))
+    }
 }
   return (
     <>
@@ -87,45 +100,96 @@ let add = () => {
 
 
 <br />
-<center><Typography variant="h4">Choose Price</Typography></center>
+<center><Typography variant="h3">Choose Price</Typography></center>
 <br />
 
-<Stack direction='column' justifyContent='space-around' alignItems='center'>
+<Stack direction='column' justifyContent='space-around' alignItems='center' 
+sx={{
+    display:{xs:'none',sm:'flex'}
+}}>
 
     <Stack direction='row'>
     <Typography sx={IconSize}>Sizes: {main.sizes[0]}  | </Typography>
-    <IconButton disableRipple onClick={()=>{removePrice(main.price[0]),setSmallSize(size=>size - 1)}}>
+    <IconButton disabled={checkBox} disableRipple onClick={()=>{removePrice(main.price[0]),setSmallSize(size=>size - 1)}}>
         <RemoveIcon sx={IconSize} className="redbtn" />
     </IconButton>
     <Typography sx={IconSize}>{main.price[0]} $</Typography>
     <IconButton disableRipple sx={IconSize} onClick={()=>{addPrice(main.price[0]),setSmallSize(smallSize + 1)}}>
         <AddIcon className="greenBtn" sx={IconSize}/>
     </IconButton>
+    <Typography sx={IconSize}>| {smallSize}</Typography>
     </Stack>
 
      <Stack direction='row'>
     <Typography sx={IconSize}>Sizes: {main.sizes[1]}  | </Typography>
-    <IconButton disableRipple onClick={()=>{removePrice(main.price[1]),setMediumSize(size=>size - 1)}}>
+    <IconButton disabled={checkBox} disableRipple onClick={()=>{removePrice(main.price[1]),setMediumSize(size=>size - 1)}}>
         <RemoveIcon sx={IconSize} className="redbtn" />
     </IconButton>
     <Typography sx={IconSize}>{main.price[1]} $</Typography>
     <IconButton disableRipple sx={IconSize} onClick={()=>{addPrice(main.price[1]),setMediumSize(size=>size + 1)}}>
         <AddIcon className="greenBtn" sx={IconSize}/>
     </IconButton>
+    <Typography sx={IconSize}>| {mediumSize}</Typography>
     </Stack>
 
     <Stack direction='row'>
     <Typography sx={IconSize}>Sizes: {main.sizes[2]}  | </Typography>
-    <IconButton disableRipple onClick={()=>{removePrice(main.price[2]),setLargeSize(size=>size - 1)}}>
+    <IconButton disabled={checkBox} disableRipple onClick={()=>{removePrice(main.price[2]),setLargeSize(size=>size - 1)}}>
         <RemoveIcon sx={IconSize} className="redbtn" />
     </IconButton>
     <Typography sx={IconSize}>{main.price[2]} $</Typography>
     <IconButton disableRipple sx={IconSize} onClick={()=>{addPrice(main.price[2]),setLargeSize(size=>size + 1)}}>
         <AddIcon className="greenBtn" sx={IconSize} />
     </IconButton>
+    <Typography sx={IconSize} id='largeColor'>| {largeSize}</Typography>
+    </Stack>
     </Stack>
             </Stack>
-        </Stack>
+            {/* Lower Than 600 */}
+<Stack direction='column' justifyContent='space-around' alignItems='center' sx={{display:{xs:'block',sm:'none'}}}>
+
+    <Stack direction='column' sx={{bgcolor:'#ff9b81'}}>
+    <Typography sx={IconSizeMini}>Sizes: {main.sizes[0]}</Typography>
+    <Stack direction='row' sx={SmallSizeBtn}>
+    <IconButton disabled={checkBox} sx={IconSizeMiniBtn} disableRipple onClick={()=>{removePrice(main.price[0]),setSmallSize(size=>size - 1)}}>
+        <RemoveIcon sx={IconSizeMini} className="redbtn" />
+    </IconButton>
+    <Typography sx={IconSizeMini}>{main.price[0]} $</Typography>
+    <IconButton disableRipple sx={IconSizeMiniBtn} onClick={()=>{addPrice(main.price[0]),setSmallSize(smallSize + 1)}}>
+        <AddIcon className="greenBtn" sx={IconSizeMini}/>
+    </IconButton>
+    </Stack>
+    <Typography sx={IconSizeMini}>Small: {smallSize}</Typography>
+    </Stack>
+
+     <Stack direction='column' mt={5} sx={{bgcolor:'#ff9b81'}}>
+    <Typography sx={IconSizeMini}>Sizes: {main.sizes[1]}</Typography>
+    <Stack direction='row' sx={SmallSizeBtn}>
+    <IconButton disabled={checkBox} sx={IconSizeMiniBtn} disableRipple onClick={()=>{removePrice(main.price[1]),setMediumSize(size=>size - 1)}}>
+        <RemoveIcon sx={IconSizeMini} className="redbtn" />
+    </IconButton>
+    <Typography sx={IconSizeMini}>{main.price[1]} $</Typography>
+    <IconButton disableRipple sx={IconSizeMiniBtn} onClick={()=>{addPrice(main.price[1]),setMediumSize(size=>size + 1)}}>
+        <AddIcon className="greenBtn" sx={IconSizeMini}/>
+    </IconButton>
+    </Stack>
+    <Typography sx={IconSizeMini}>Medium: {mediumSize}</Typography>
+    </Stack>
+
+    <Stack direction='column' mt={5} sx={{bgcolor:'#ff9b81'}}>
+    <Typography sx={IconSizeMini}>Sizes: {main.sizes[2]}</Typography>
+    <Stack direction='row' sx={SmallSizeBtn}>
+    <IconButton disabled={checkBox} disableRipple sx={IconSizeMiniBtn} onClick={()=>{removePrice(main.price[2]),setLargeSize(size=>size - 1)}}>
+        <RemoveIcon sx={IconSizeMini} className="redbtn" />
+    </IconButton>
+    <Typography sx={IconSizeMini}>{main.price[2]} $</Typography>
+    <IconButton disableRipple sx={IconSizeMiniBtn} onClick={()=>{addPrice(main.price[2]),setLargeSize(size=>size + 1)}}>
+        <AddIcon className="greenBtn" sx={IconSizeMini} />
+    </IconButton>
+    </Stack>
+    <Typography sx={IconSizeMini} id='largeColor'>Large: {largeSize}</Typography>
+    </Stack>
+            </Stack>         
     </Box>
 </center>
 <br />
@@ -143,7 +207,10 @@ let add = () => {
     <Button 
     onClick={()=>add()}
     variant='contained'
-    sx={{padding:'10px 50px'}}
+    disableElevation
+    disableTouchRipple
+    disableRipple
+    sx={{padding:'10px 50px',backgroundColor:'orange','&:hover':{backgroundColor:'orange'}}}
     disabled={checkBox}
     >
     Confirm</Button>
