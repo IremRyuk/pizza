@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import {Box,Button,IconButton,Stack, Typography} from '@mui/material'
+import {Box,Button,IconButton,Snackbar,Stack, Typography} from '@mui/material'
 import Data from '../Data/pizzaData.json'
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
@@ -8,6 +8,16 @@ import '../Styles/Home/home.css'
 import {useState,useEffect}from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { ItemPriceActAdd, ItemPriceActRemoveAndAdd } from "../Redux/Action/ItemConfirmPriceAct/ItemPriceAct";
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import React from "react";
+
+// SnackBar
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref,
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 export default function Items() {
     // Redux
@@ -21,6 +31,15 @@ export default function Items() {
     const [mediumSize,setMediumSize] = useState<number>(0)
     const [largeSize,setLargeSize] = useState<number>(0)
     let [obj,setObj] = useState<{}>({})
+    // SnackBar State
+    const [open, setOpen] = useState(false);
+      const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
 
     // Get Id From food/:Id
     let {Id} = useParams()
@@ -59,8 +78,10 @@ let add = () => {
     if(cartStore.some((res:any)=>res.main.id == main.id)){
         dispatch(ItemPriceActRemoveAndAdd(main.id))
         dispatch(ItemPriceActAdd(obj))
+        setOpen(true)
     }else{
         dispatch(ItemPriceActAdd(obj))
+        setOpen(true)
     }
 }
   return (
@@ -199,7 +220,7 @@ sx={{
 <p style={{width:'100vw',borderTop:'1px solid black'}}></p>
 <br />
     <center>
-    <Box width='90vw'>
+    <Box width='90vw' marginBottom='50px'>
 
     <Typography sx={{fontSize:'xx-large',fontWeight:'bold'}}>Full Price: {mainPrice.toFixed(2)}<span style={{color:'green'}}>$</span></Typography>
     <br />
@@ -215,6 +236,14 @@ sx={{
     >
     Confirm</Button>
     <Typography variant='h6' color='error'>{checkBox?'Please Select Sizes':''}</Typography>
+    <Snackbar open={open} autoHideDuration={3000} onClose={handleClose} 
+    anchorOrigin={{vertical:"bottom",horizontal:"right"}}
+    >
+        <Alert onClose={handleClose} severity="success"
+        sx={{ width: '100%',bgcolor:'#007bff' }}>
+        Successfully  Added In Cart
+        </Alert>
+      </Snackbar>
     </Box>
     </center>
     </>

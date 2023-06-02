@@ -1,6 +1,6 @@
-
-import Filter from "../Components/Filter.tsx";
-import MainData from "../Components/MainData.tsx";
+import Bottom from "../Home Components/Bottom.tsx";
+import Filter from "../Home Components/Filter.tsx";
+import MainData from "../Home Components/MainData.tsx";
 import '../Styles/Home/home.css'
 
 export default function Home() {
@@ -8,6 +8,7 @@ export default function Home() {
     <div className="home">
 <Filter />
 <MainData />
+<Bottom />
     </div>
   )
 }

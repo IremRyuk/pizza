@@ -154,7 +154,7 @@
     {
       "id": 20,
       "name": "Ham Sandwich",
-      "img": "https://media.istockphoto.com/id/157428028/photo/ham-sandwich.jpg?s=170667a&w=0&k=20&c=oKhrGfwcwY9mCjHoCxdZGqJ7qkthmjSuKE3XgovplFg=",
+      "img": "https://t3.ftcdn.net/jpg/00/63/14/82/360_F_63148210_6CW92adBmtCT8s96W0IYPJpkZsPh8IQ5.jpg",
       "price": [17.89, 32.99, 42.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Bread with ham, cold nuts,cheese,tomato"
@@ -162,7 +162,7 @@
     {
       "id": 21,
       "name": "Cheesy",
-      "img": "https://previews.123rf.com/images/mg7/mg71602/mg7160200018/53442330-sliced-chicken-club-sandwich.jpg",
+      "img": "https://media.istockphoto.com/id/180732713/photo/grilled-cheese-sandwich-on-sourdough-bread.jpg?s=612x612&w=0&k=20&c=R77kviMgCw9eOYsaZONgkLftKafN2kDXsXmeuvf6EjQ=",
       "price": [16.99, 26.99, 37.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Bread with 3 types of cheese and tomato,ham"

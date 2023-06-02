@@ -84,14 +84,12 @@ onClose={()=>setIsOpen(e=>!e)}
 <Box
 width='200px'
 >
-    <center><Typography variant="h4" sx={{color:'orange'}} mt={1}>Category</Typography></center>
+    <center><Typography variant="h5" sx={{color:'orange'}} mt={1}>Category</Typography></center>
     <br />
 {/* Navigation Links */}
 <Stack direction='column' mt={2} spacing={2}>
-<Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Menu</Button>
-<Button variant="text" onClick={()=>navigate('/contacts')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'x-large',padding:'0px'}}>Contact</Button>
-<br />
-<br />
+<Button variant="text" onClick={()=>navigate('/')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'large',padding:'0px'}}>Menu</Button>
+<Button variant="text" onClick={()=>navigate('/contacts')} disableElevation disableTouchRipple sx={{color:'orange',fontSize:'large',padding:'0px'}}>Contact</Button>
 <Button 
 startIcon={<ShoppingCartIcon />}
 onClick={()=>navigate('/cart')} 
