@@ -78,7 +78,6 @@ sx={{
   overflowX:'hidden'
 }}
 borderRadius='2.4mm'
-boxShadow='0px 0px 15px orangered'
 >
   {allItems.map((info:any)=>(
     <div key={info.main.id}>

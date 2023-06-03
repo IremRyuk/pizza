@@ -24,20 +24,20 @@ export default function Items() {
     let dispatch = useDispatch()
     let cartStore = useSelector((state:any)=>state.allItemsPrice)
 
-    // usState
+    // useState
     let[checkBox,setcheckBox] = useState<boolean>(false)
     const [mainPrice,setMainPrice] = useState<number>(0)
     const [smallSize,setSmallSize] = useState<number>(0)
     const [mediumSize,setMediumSize] = useState<number>(0)
     const [largeSize,setLargeSize] = useState<number>(0)
     let [obj,setObj] = useState<{}>({})
+
     // SnackBar State
     const [open, setOpen] = useState(false);
       const handleClose = (_event?: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
           return;
         }
-    
         setOpen(false);
       };
 
@@ -46,17 +46,20 @@ export default function Items() {
     let res = Data.filter((info:any)=>{return info.id == Id})
     const main = res[0]
 
+    // Change Document Title To Food name
+document.title = main.name
+
     // add item
 let addPrice = (price:number) => {
     setMainPrice(mainPrice + price)
     setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
-//    remove item
+    // remove item
 let removePrice = (price:number) =>{
     setMainPrice(mainPrice - price)
     setObj({main,mainPrice,smallSize,mediumSize,largeSize})
 }
-// Look After Price And Button 
+    // Look After Price And Button 
 useEffect(()=>{
             setObj({main,mainPrice,smallSize,mediumSize,largeSize})
             // Check Values
@@ -72,7 +75,7 @@ useEffect(()=>{
             }
 },[mainPrice])
 
-// add item in store(Redux)
+    // add item in store(Redux)
 let add = () => {
     // Check if Redux Data includes 'main.id' so remove it and replace with new one
     if(cartStore.some((res:any)=>res.main.id == main.id)){
