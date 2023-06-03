@@ -7,6 +7,7 @@ import CartOrder from './CartOrder';
 import CartDescription from './CartDescription';
 
 export default function Cart() {
+  document.title = 'Pizza Land'
   // React State
   let [fullPirce,setFullPrice] = useState<number>(0)
   // React-Router-DOm

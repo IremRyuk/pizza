@@ -8,6 +8,7 @@ import { ContactBox, ContactBtns } from "../Styles/mui/Mui";
 import {useEffect} from 'react'
 
 export default function Contacts() {
+    document.title = 'Pizza Land'
     useEffect(()=>{
         $(".phone").show(600)
         $(".mail").hide(500)

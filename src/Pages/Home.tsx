@@ -4,7 +4,6 @@ import MainData from "../Home Components/MainData.tsx";
 import '../Styles/Home/home.css'
 
 export default function Home() {
-  document.title = 'Pizza Land'
   return (
     <div className="home">
 <Filter />

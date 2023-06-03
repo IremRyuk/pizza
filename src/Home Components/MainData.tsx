@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { FoodFonts } from '../Styles/mui/Mui'
 
 export default function MainData() {
+  document.title = 'Pizza Land'
     // React Router Dom
     let navigate = useNavigate()
     // Redux
