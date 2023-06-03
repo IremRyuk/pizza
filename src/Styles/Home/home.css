@@ -7,6 +7,7 @@
 .home {
   width: 100vw;
   height: auto;
+  overflow-x: hidden;
 }
 
 .redbtn {
@@ -28,12 +29,15 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: orangered;
-  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: orange;
 }
 
 @media screen and (max-width: 600px) {

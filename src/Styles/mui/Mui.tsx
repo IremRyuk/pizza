@@ -57,8 +57,11 @@ export const NavigationBottom = {
 }
 // Contacts Page
 export const ContactBtns = {
-    width:{xs:'40%',md:'auto'},
-    scale:'1',
+    width: {
+        xs: '40%',
+        md: 'auto'
+    },
+    scale: '1',
     bgcolor: '#A0A0A0',
     transition: '0.17s',
     color: 'black',
@@ -66,16 +69,28 @@ export const ContactBtns = {
     margin: '20px',
     '&:hover': {
         bgcolor: '#A0A0A0',
-        scale: {xs:"1.2",md:'1.3'}
+        scale: {
+            xs: "1.2",
+            md: '1.3'
+        }
     }
 }
 export const ContactBox = {
-    width:{xs:'100%',md:'60%'}, 
-    height:'90%',
-    borderRadius:'2.4mm',
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    alignItems:'center',
-    bgcolor:'#454545',
+    width: {
+        xs: '100%',
+        md: '60%'
+    },
+    height: '90%',
+    borderRadius: '2.4mm',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    bgcolor: '#454545'
+}
+// Cart Name,Size,Price Fonts
+export const CartFonts = {
+    fontWeight: 'bold',
+    color: 'orange',
+    fontSize:{xs:'large',sm:'medium',lg:'x-large'}
 }

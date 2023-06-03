@@ -1,10 +1,10 @@
-import {useDispatch,useSelector} from 'react-redux'
-import { Box, Stack,Typography,IconButton, Button } from '@mui/material'
-import { ItemPriceActClear } from '../Redux/Action/ItemConfirmPriceAct/ItemPriceAct'
-import DoNotDisturbOnIcon from '@mui/icons-material/DoNotDisturbOn';
+import {useSelector} from 'react-redux'
+import { Box, Stack,Typography, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import {useState,useEffect} from 'react'
 import '../Styles/Home/home.css'
+import CartOrder from './CartOrder';
+import CartDescription from './CartDescription';
 
 export default function Cart() {
   // React State
@@ -12,14 +12,13 @@ export default function Cart() {
   // React-Router-DOm
   const navigate = useNavigate()
   // Redux
-  let dispatch = useDispatch()
     let allItems = useSelector((state:any)=>state.allItemsPrice)
     // Check Price On Every Change(Add In Cart)
     useEffect(()=>{
       allItems.filter((res:any)=>{setFullPrice(e=>e+res.mainPrice)})
         },[])
   return (
-    <>
+    <div className='home'>
     {allItems.length === 0 &&
     <Box
     sx={{
@@ -38,7 +37,7 @@ export default function Cart() {
     color='primary'
     sx={{
       fontFamily:`'Roboto Slab', serif`,
-      width:'100vw',
+      width:'95vw',
       fontSize:{
         xs:"x-large",
         md:'xx-large'
@@ -62,79 +61,35 @@ export default function Cart() {
     <center><Box
     sx={{
       marginTop:'100px',
-      width:'90vw',
+      width:{xs:'95vw',md:'80vw'},
       display:'flex',
-      justifyContent:'space-evenly',
-      alignItems:'center'
+      flexDirection:{xs:'column',md:'row'},
+      justifyContent:'space-between',
+      alignItems:'flex-start'
     }}
     >
 <Stack
 direction='column'
-p={2}
+p={1}
 sx={{
-  width:'60%',
-  height:'80vh',
+  width:{xs:'100%',md:'72%'},
+  height:{xs:'auto',md:'80vh'},
   overflowY:'auto',
   overflowX:'hidden'
 }}
-border='2px solid orangered'
 borderRadius='2.4mm'
+boxShadow='0px 0px 15px orangered'
 >
   {allItems.map((info:any)=>(
     <div key={info.main.id}>
-    <Stack
-    direction='row'
-    justifyContent='space-evenly'
-    alignItems='center'
-    sx={{width:'100%'}}
-    className='itemsList'
-    >
-    <Box
-    component='img'
-    src={info.main.img}
-    alt={info.main.name}
-    sx={{width:'30%',objectFit:'contain'}}
-    />
-    <Stack direction='row' width='65%' display='flex' justifyContent='space-evenly' alignItems='flex-start'>
-    <Stack direction='column' textAlign='center'>
-    <Typography sx={{fontWeight:'bold',color:'orange'}}>Name:{info.main.name}</Typography>
-    <Typography>Size:Small = {info.smallSize}</Typography>
-    <Typography>Size:Medium = {info.mediumSize}</Typography>
-    <Typography>Size:Large = {info.largeSize}</Typography>
-    </Stack>
-    <Stack direction='column' textAlign='center'>
-    <Typography sx={{fontWeight:'bold',color:'orange'}}>Price</Typography>
-    <Typography>{info.mainPrice.toFixed(2)}$</Typography>
-    </Stack>
-    <IconButton 
-    onClick={()=>{dispatch(ItemPriceActClear(info.main.id)),setFullPrice(currentPrice=>currentPrice-info.mainPrice.toFixed(2))}}
-    color='error'
-    sx={{scale:'1.5',transition:'0.2s','&:hover':{scale:'2'}}}
-    >
-<DoNotDisturbOnIcon />
-    </IconButton>
-    </Stack>
-    <br />
-    </Stack>
-    <p style={{width:'100%',borderTop:'1px solid silver',margin:'25px 0px'}}></p>
+<CartDescription info={info}/>
+    <p style={{width:'100%',margin:'25px 0px'}}></p>
     </div>
   ))}
 </Stack>
-<Stack
-direction='column'
-width='30%'
-borderRadius='2.4mm'
-sx={{
-  width:'30%',
-  border:'2px solid yellow'
-}}
-bgcolor='#A0A0A0'
->
-  <Typography sx={{fontWeight:'bold',color:'orange'}}>Full Price</Typography>
-  <Typography sx={{fontWeight:'bold',color:'orangered'}}>{fullPirce.toFixed(2)} $</Typography>
-</Stack>
+<CartOrder price={fullPirce}/>
     </Box></center>
     }
-    </>
+    </div>
   )
 }
