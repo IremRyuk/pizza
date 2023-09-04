@@ -25,7 +25,7 @@ export default function Nav() {
         })
         window.addEventListener('scroll',()=>{
                 if(window.scrollY>0){
-                    $('.nav').css({backdropFilter:'blur(5px'})
+                    $('#nav').css({backdropFilter:'blur(5px'})
                 }
         })
     })
@@ -34,11 +34,8 @@ export default function Nav() {
       }
   return (
     <AppBar 
-    className='nav'
+    id='nav'
     sx={{
-position:'fixed',
-top:'0%',
-left:'0%',
 bgcolor:'transparent',
 boxShadow:'none',
 padding:'0px',

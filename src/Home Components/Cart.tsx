@@ -20,6 +20,8 @@ export default function Cart() {
         },[])
   return (
     <div className='home'>
+
+      {/* If Box is empty */}
     {allItems.length === 0 &&
     <Box
     sx={{
@@ -31,7 +33,7 @@ export default function Cart() {
       flexDirection:'column',
       justifyContent:'center',
       alignItems:'center',
-      textAlign:'center'
+      textAlign:'center',
     }}
     >
     <Typography
@@ -58,36 +60,42 @@ export default function Cart() {
     >Back To Home Page</Button>
     </Box>
     }
+
+    {/* If Item is inside box */}
     {allItems.length > 0 && 
     <center><Box
     sx={{
-      marginTop:'100px',
-      width:{xs:'95vw',md:'80vw'},
+      marginTop:{xs:'50px',sm:'100px'},
+      width:{xs:'95vw',lg:'80vw'},
       display:'flex',
-      flexDirection:{xs:'column',md:'row'},
+      flexDirection:{xs:'column',lg:'row'},
       justifyContent:'space-between',
-      alignItems:'flex-start'
+      alignItems:{xs:'center',lg:'flex-start'}
     }}
     >
 <Stack
 direction='column'
 p={1}
 sx={{
-  width:{xs:'100%',md:'72%'},
-  height:{xs:'auto',md:'80vh'},
+  width:{xs:'100%',lg:'72%'},
+  height:{xs:'auto',lg:'80vh'},
   overflowY:'auto',
   overflowX:'hidden'
 }}
 borderRadius='2.4mm'
 >
+
+  {/* Chosen Items */}
   {allItems.map((info:any)=>(
     <div key={info.main.id}>
 <CartDescription info={info}/>
-    <p style={{width:'100%',margin:'25px 0px'}}></p>
     </div>
   ))}
 </Stack>
-<CartOrder price={fullPirce}/>
+
+
+{/* Price */}
+<CartOrder price={fullPirce} />
     </Box></center>
     }
     </div>

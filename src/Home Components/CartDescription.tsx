@@ -14,11 +14,13 @@ export default function CartDescription({info}:Main) {
   let dispatch = useDispatch()
   return (
     <Stack
+    position='relative'
     direction={{xs:'column',sm:'row'}}
-    justifyContent='space-evenly'
+    justifyContent='space-between'
     alignItems='center'
     p={2}
-    sx={{width:'95%',boxShadow:'0px 0px 10px black',borderRadius:'2.4mm'}}
+    mt={3}
+    sx={{width:'95%',boxShadow:'0px 0px 15px 7px silver',borderRadius:'2.4mm'}}
     className='itemsList'
     >
     <Box
@@ -29,10 +31,11 @@ export default function CartDescription({info}:Main) {
     />
     <Stack 
     direction='row' 
-    sx={{width:'100%',
-    display:'flex',
-    justifyContent:'space-around',
-    alignItems:'flex-start',
+    sx={{
+    width:{xs:'100%',sm:"65%"},
+    flexDirection:{xs:'column',sm:'row'},
+    justifyContent:{xs:'center',sm:'space-around'},
+    alignItems:{xs:'center',sm:'flex-start'},
     marginTop:{xs:'10px',sm:'0px'}
     }}>
     <Stack direction='column' textAlign='center'>
@@ -41,6 +44,7 @@ export default function CartDescription({info}:Main) {
     <Typography sx={CartFonts}>Size:Medium = {info.mediumSize}</Typography>
     <Typography sx={CartFonts}>Size:Large = {info.largeSize}</Typography>
     </Stack>
+    <Box sx={{display:{xs:'flex',sm:'none'},width:{xs:'100%'},border:'1px solid silver'}}></Box>
     <Stack direction='column' textAlign='center'>
     <Typography sx={CartFonts}>Price</Typography>
     <Typography sx={CartFonts}>{info.mainPrice.toFixed(2)}$</Typography>
@@ -48,7 +52,7 @@ export default function CartDescription({info}:Main) {
     <IconButton 
     onClick={()=>{dispatch(ItemPriceActClear(info.main.id)),setFullPrice(currentPrice=>currentPrice-info.mainPrice.toFixed(2))}}
     color='error'
-    sx={{scale:'1.5',transition:'0.2s','&:hover':{scale:'2'}}}
+    sx={{position:{xs:'absolute',sm:'static'},top:'2%',right:'5%',scale:'1.5',transition:'0.2s','&:hover':{scale:'2'}}}
     >
 <DoNotDisturbOnIcon />
     </IconButton>

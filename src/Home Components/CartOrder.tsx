@@ -5,37 +5,40 @@ type Price = {
 }
 export default function CartOrder({price}:Price) {
   return (
+    <>
 <Stack
-direction='column'
+display='flex'
 borderRadius='2.4mm'
+alignItems='center'
+justifyContent='space-evenly'
 p={1}
+mt={4}
+mb={2}
 sx={{
-  width:{xs:'100%',md:'25%'},
-  marginTop:{xs:"20px",md:"0px"},
-  marginBottom:"20px",
+  flexDirection:{xs:'column',sm:'row',lg:'column'},
+  width:{xs:'100%',sm:'95%',lg:'25%'},
   border:'2px solid orange'
 }}
 >
-  <Typography variant='h5' sx={{fontWeight:'bold',color:'orange'}}>Full Price</Typography>
+  <Typography sx={{fontSize:{xs:'22px',sm:'25px',md:'27px'},fontWeight:'bold',color:'orange'}}>Full Price</Typography>
   <br />
-  <Typography variant='h4' sx={{fontWeight:'bold',color:'orangered'}}>{price.toFixed(2)} $</Typography>
+  <Typography sx={{fontSize:{xs:'25px',sm:'27px',md:'29px'},fontWeight:'bold',color:'orangered'}}>{price.toFixed(2)} $</Typography>
   <br />
-  <Typography variant='h5' sx={{fontWeight:'bold',color:'orange'}}>All Done?</Typography>
-  <center>
+  <Typography sx={{fontSize:{xs:'22px',sm:'25px',md:'27px'},fontWeight:'bold',color:'orange'}}>All Done?</Typography>
   <Button 
   onClick={()=>window.location.href = 'tel:' + 41273875}
   startIcon={<PhoneIcon sx={{color:'orange'}} />} 
    variant='contained' 
    sx={{
-    width:{xs:'60%',md:'100%'},
-    marginTop:'20px',
+    width:'fit-content',
     color:'orange',
     fontWeight:'bold',
     transition:'0.2s',
+    marginTop:{sm:'0px',lg:'10px'},
     '&:hover':{scale:'1.05'}
     }}
     >Order Food</Button>
-    </center>
 </Stack>
+</>
   )
 }

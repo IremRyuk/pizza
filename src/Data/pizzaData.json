@@ -142,29 +142,5 @@
       "price": [19.39, 27.99, 39.99],
       "sizes": ["320g", "530g", "860g"],
       "description": "Bread with tomato,cheese,egg,salad"
-    },
-    {
-      "id": 19,
-      "name": "Grilled Cheese",
-      "img": "https://img.freepik.com/free-photo/sandwich_1339-1108.jpg",
-      "price": [21.49, 31.99, 41.99],
-      "sizes": ["320g", "530g", "860g"],
-      "description": "Bread with cheese and egg"
-    },
-    {
-      "id": 20,
-      "name": "Ham Sandwich",
-      "img": "https://t3.ftcdn.net/jpg/00/63/14/82/360_F_63148210_6CW92adBmtCT8s96W0IYPJpkZsPh8IQ5.jpg",
-      "price": [17.89, 32.99, 42.99],
-      "sizes": ["320g", "530g", "860g"],
-      "description": "Bread with ham, cold nuts,cheese,tomato"
-    },
-    {
-      "id": 21,
-      "name": "Cheesy",
-      "img": "https://media.istockphoto.com/id/180732713/photo/grilled-cheese-sandwich-on-sourdough-bread.jpg?s=612x612&w=0&k=20&c=R77kviMgCw9eOYsaZONgkLftKafN2kDXsXmeuvf6EjQ=",
-      "price": [16.99, 26.99, 37.99],
-      "sizes": ["320g", "530g", "860g"],
-      "description": "Bread with 3 types of cheese and tomato,ham"
     }
   ]

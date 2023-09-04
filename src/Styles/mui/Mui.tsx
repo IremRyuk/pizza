@@ -6,14 +6,16 @@ export const IconSizeMini = {
     scale: '1'
 }
 export const IconSizeMiniBtn = {
-    fontSize: 'xx-large',
+    fontSize: 'x-large',
     scale: '1.5'
 }
+export const SmallSizeList = {
+    width: '70vw',
+    textAlign:'center'
+}
 export const SmallSizeBtn = {
-    width: '100vw',
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
+    width: 'fit-content',
+    padding:'5px 10px'
 }
 export const InputMui = {
     width: {
@@ -92,5 +94,5 @@ export const ContactBox = {
 export const CartFonts = {
     fontWeight: 'bold',
     color: 'orange',
-    fontSize:{xs:'large',sm:'medium',lg:'x-large'}
+    fontSize:{xs:'x-large',sm:'x-large',lg:'x-large'}
 }

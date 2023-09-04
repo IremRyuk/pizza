@@ -1,6 +1,3 @@
-export const NavMain = {
-position:'fixed'
-}
 export const TitlePizza = {
     fontSize:{xs:'x-large',sm:'xx-large'},
     '&:hover':{backgroundColor:'transparent'},
