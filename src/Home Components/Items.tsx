@@ -48,6 +48,11 @@ export default function Items() {
 
     // Change Document Title To Food name
 document.title = main.name
+   // Set Page on Top
+useEffect(()=>{
+   window.scrollTo(0,0)
+},[])
+
 
     // add item
 let addPrice = (price:number) => {
@@ -119,8 +124,8 @@ let add = () => {
         mt={2}
         spacing={2}
         >
-<Typography variant='h5'><span style={{fontWeight:'bold'}}>Name</span>:{main.name}</Typography>
-<Typography variant='h5'><span style={{fontWeight:'bold'}}>Description</span>:{main.description}</Typography>
+<Typography variant='h5'><span style={{fontWeight:'bold'}}>Name</span>: {main.name}</Typography>
+<Typography variant='h5'><span style={{fontWeight:'bold'}}>Ingredients</span>: {main.description}</Typography>
 
 
 <br />

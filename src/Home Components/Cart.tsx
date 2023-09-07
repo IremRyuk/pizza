@@ -56,7 +56,7 @@ export default function Cart() {
     disableElevation
     onClick={()=>navigate('/')}
     variant='contained' 
-    sx={{color:'orange',fontWeight:'bold',borderRadius:'2.4mm',fontSize:'x-large'}}
+    sx={{color:'orange',fontWeight:{xs:'400',sm:'bold'},borderRadius:'2.4mm',fontSize:'x-large'}}
     >Back To Home Page</Button>
     </Box>
     }
