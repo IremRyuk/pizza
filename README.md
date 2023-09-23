@@ -1,8 +1,8 @@
-<h1 align="center">Hellow, I'm George Web Developer and this is Pizza Website</h1>
+<h1 align="center">Hellow, I'm George Web Developer and this is PizzaLand  Website</h1>
 <h3 align="center">Site Descrition: PizzaLand is company where you can see current meals , select your meals,choose size of meal and add to your cart, you can select multiple meals at the same time and finally you can send it to company.</h3>
 
 <img src="https://imagestorageryuk.netlify.app/assets/pizza1-2a816dd9.webp" />
-<h1 align="center"><a href="https://ryukpizza.netlify.app/">Click Here To Visit Pizza Website<a/> </h1>
+<h1 align="center"><a href="https://ryukpizza.netlify.app/">Click Here To Visit PizzaLand Website<a/> </h1>
 
   
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=iremryuk&label=Profile%20views&color=0e75b6&style=flat" alt="iremryuk" /> </p>
